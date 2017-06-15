@@ -1,0 +1,30 @@
+﻿<Controls:MetroWindow  x:Class="CookingBook.MainWindow"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CookingBook"
+        mc:Ignorable="d"
+        Title="Książka Kucharska" Height="540" Width="780" ResizeMode="CanMinimize">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="140" />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <DockPanel Grid.Column="0" Grid.Row="0" Grid.RowSpan="5">
+            <StackPanel>
+                <Button Command="{Binding SearchCmd}" Content="Szukaj" Height="110" Margin="10,17,10,10" Style="{StaticResource AccentedSquareButtonStyle}" />
+                <Button Command="{Binding AddCmd}" Content="Dodaj przepis" Height="110" Margin="10,0,10,10" Style="{StaticResource AccentedSquareButtonStyle}" />
+                <Button Command="{Binding HomeCmd}" Content="Strona główna" Height="110" Margin="10,0,10,10"  Style="{StaticResource AccentedSquareButtonStyle}" />
+                <Button Command="{Binding CloseCmd}" Content="Wyjście" Height="110" Margin="10,0,10,15" Style="{StaticResource AccentedSquareButtonStyle}" />
+            </StackPanel>
+        </DockPanel>
+        <Label Content="KSIĄŻKA KUCHARSKA" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="28" />
+        <Frame x:Name="Main" Grid.Column="1" Grid.Row="1" Source="{Binding Page}" NavigationUIVisibility="Hidden" />
+    </Grid>
+</Controls:MetroWindow>
